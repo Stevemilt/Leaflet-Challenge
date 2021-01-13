@@ -66,12 +66,14 @@ var legend = L.control({position: 'bottomright'});
             labels = [],
             from, to;
         for (var i = 0; i < mhis.length; i++) {
+            console.log(mhis[i]);
             from = mhis[i];
             to = mhis[i+1];
             labels.push(
-                '<i style="background:' + getColor(from +1) + '"></i' +
+                '<i style="background:' + getColor(from +1) + '"></i> ' +
                 from + (to ? '&ndash;' + to: '+'));
         }
+        console.log(labels);
         div.innerHTML = labels.join('<br>');
         return div;
     };
